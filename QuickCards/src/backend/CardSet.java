@@ -28,6 +28,10 @@ public class CardSet
 	{
 		return cards;
 	}
+	
+	public Card getCard(int pos) {
+		return cards.get(pos);
+	}
 
 	public void setName(String name)
 	{
@@ -38,9 +42,17 @@ public class CardSet
 	{
 		cards.add(card);
 	}
+
+	public void removeCards(Card card) {
+		cards.remove(card);
+	}
 	
 	public void setCards(List<Card> cards)
 	{
 		this.cards = cards;
+	}
+	
+	public int getSize() {
+		return cards.size();
 	}
 }

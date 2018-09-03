@@ -5,77 +5,101 @@ import java.util.List;
 
 /**
  * @author Sheng
- * A single card contains a name and a description.
+ * A single card contains a question and a Explanation.
  */
 public class Card
 {
-	private String name;
-	private List<String> descriptions;
+	private String question; //change to something more inclusive of all entries
+	private List<String> explanations;
+	private int timesPlayed;
+	private int timesGottenWrong;
 	
 	public Card()
 	{
 		this("N/A");
 	}
 	
-	public Card(String name)
+	public Card(String question)
 	{
-		this.name = name;
-		descriptions = new ArrayList<String>();
+		this.question = question;
+		explanations = new ArrayList<String>();
 	}
 	
-	public Card(String name, String description)
+	public Card(String question, String explanation)
 	{
-		this.name = name;
-		descriptions = new ArrayList<String>();
-		descriptions.add(description);
+		this.question = question;
+		explanations = new ArrayList<String>();
+		explanations.add(explanation);
 	}
 	
-	public Card(String name, List<String> descriptions)
+	public Card(String question, List<String> explanations)
 	{
-		this.name = name;
-		if(descriptions == null)
-			this.descriptions = new ArrayList<String>();
+		this.question = question;
+		if(explanations == null)
+			this.explanations = new ArrayList<String>();
 		else
-			this.descriptions = descriptions;
+			this.explanations = explanations;
 	}
 	
 	public String toString()
 	{
 		String info = "";
-		for(String desc: descriptions)
+		for(String desc: explanations)
 			info += desc + "\n";
 		if(info.equals(""))
-			info = "No Description";
-		return name + "\n" + info;
+			info = "No Explanation";
+		return question + "\n" + info;
 	}
 
-	public String getName()
+	public String getQuestion()
 	{
-		return name;
+		return question;
 	}
 
-	public void setName(String name)
+	public void setQuestion(String question)
 	{
-		this.name = name;
+		this.question = question;
 	}
 
-	public List<String> getDescriptions()
+	public List<String> getExplanations()
 	{
-		return descriptions;
+		return explanations;
 	}
 
-	public void setDescriptions(List<String> descriptions)
+	public void setExplanations(List<String> explanations)
 	{
-		this.descriptions = descriptions;
+		this.explanations = explanations;
 	}
 	
-	public void addDescription(String str)
+	public void addExplanation(String str)
 	{
-		descriptions.add(str);
+		explanations.add(str);
 	}
 	
-	public void removeDescription(int idx)
+	public void removeExplanation(int idx)
 	{
-		descriptions.remove(idx);
+		explanations.remove(idx);
+	}
+	
+	public void incrementTimesPlayed()
+	{ 
+		timesPlayed++;
+	}
+	
+	public void incrementTimesGottenWrong()
+	{
+		timesGottenWrong++;
+	}
+	
+	public int getTimesPlayed() {
+		return timesPlayed;
+	}
+	
+	public int getTimesGottenWrong() {
+		return timesGottenWrong;
+	}
+	
+	public String getPercentageWrong() {
+		return "You have gotten this wrong " + (timesGottenWrong*100)/timesPlayed + "% of the time.";
 	}
 }
