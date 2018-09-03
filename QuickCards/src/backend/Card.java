@@ -3,6 +3,10 @@ package backend;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Sheng
+ * A single card contains a name and descriptions.
+ */
 public class Card
 {
 	private String name;
