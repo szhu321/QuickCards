@@ -57,7 +57,7 @@ public class MainMenuController implements Initializable
 		tempCards.addCard(card3);
 		tempCards.addCard(card4);
 		
-		System.out.println(card1.getDescriptions());
+		System.out.println(card1.getExplanations());
 		
 		
 		testCardSets.add(tempCards);

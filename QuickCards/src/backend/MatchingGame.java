@@ -23,9 +23,7 @@ public class MatchingGame {
 	}
 	
 	private void setUpField() {
-		for() {
-			
-		}
+		
 	}
 	
 	private Card selectRandomCard() {

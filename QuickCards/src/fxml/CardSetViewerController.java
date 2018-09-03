@@ -60,10 +60,10 @@ public class CardSetViewerController implements Initializable
 		Card card = cardSet.getCards().get(currentCardIdx);
 		String text = "";
 		if(front)
-			text = card.getName();
+			text = card.getQuestion();
 		else
 		{
-			for(String str: card.getDescriptions())
+			for(String str: card.getExplanations())
 			{
 				text += str + "\n";
 			}
