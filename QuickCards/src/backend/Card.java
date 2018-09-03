@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * @author Sheng
- * A single card contains a name and descriptions.
+ * A single card contains a name and a description.
  */
 public class Card
 {
@@ -19,7 +19,15 @@ public class Card
 	
 	public Card(String name)
 	{
-		this(name, null);
+		this.name = name;
+		descriptions = new ArrayList<String>();
+	}
+	
+	public Card(String name, String description)
+	{
+		this.name = name;
+		descriptions = new ArrayList<String>();
+		
 	}
 	
 	public Card(String name, List<String> descriptions)
