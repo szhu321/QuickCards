@@ -16,9 +16,11 @@ public class MainRunner extends Application
 {
 	public static Stage window;
 	public static Scene scene;
-	private Group root;
+	public static Group root;
 	
-	private List<CardSet> testCardSets = new ArrayList<CardSet>();
+	//Testing variables
+	public static List<CardSet> testCardSet;
+	public static CardSet currentCardSet;
 	
 	//Launches the program. Launch calls the start method.
 	public static void main(String[] args)
@@ -33,34 +35,15 @@ public class MainRunner extends Application
 		window = mainStage;
 		window.setTitle("QuickCards");
 		
-		createCardSet();
-		
 		root = new Group();
 		
 		scene = new Scene(root, 800, 600);
-		root.getChildren().setAll((BorderPane)FXMLLoader.load(getClass().getResource("/fxml/MainMenu.fxml")));
-		
+		//root.getChildren().setAll((BorderPane)FXMLLoader.load(getClass().getResource("/fxml/MainMenu.fxml")));
+		BorderPane bp = (BorderPane)FXMLLoader.load(getClass().getResource("/fxml/MainMenu.fxml"));
+		root.getChildren().add(bp);
 		window.setScene(scene);
 		window.show();
 	}
 	
-	private void createCardSet()
-	{
-		CardSet tempCards = new CardSet("Pre-K");
-		Card card1 = new Card("Apple" ,"A red fruit that is tasty");
-		Card card2 = new Card("Pear" ,"A yellow fruit that is tasty");
-		Card card3 = new Card("Lava" ,"Very hot rock");
-		Card card4 = new Card("Boat" ,"Something that floats on water");
-		
-		
-		tempCards.addCard(card1);
-		tempCards.addCard(card2);
-		tempCards.addCard(card3);
-		tempCards.addCard(card4);
-		
-		System.out.println(card1.getDescriptions());
-		
-		
-		testCardSets.add(tempCards);
-	}
+	
 }
