@@ -65,6 +65,14 @@ public class Card
 	{
 		return explanations;
 	}
+	
+	public String getStringExplanations() {
+		String result = "";
+		for(String s:explanations) {
+			result += s + "\n";
+		}
+		return result;
+	}
 
 	public void setExplanations(List<String> explanations)
 	{
