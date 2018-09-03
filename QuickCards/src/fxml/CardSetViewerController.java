@@ -42,7 +42,7 @@ public class CardSetViewerController implements Initializable
 	public void next()
 	{
 		front = true;
-		if(currentCardIdx + 1 <= cardSet.getCards().size())
+		if(currentCardIdx + 1 <= cardSet.getCards().size() - 1)
 			currentCardIdx++;
 		display();
 	}
