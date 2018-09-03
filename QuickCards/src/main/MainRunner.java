@@ -33,6 +33,8 @@ public class MainRunner extends Application
 		window = mainStage;
 		window.setTitle("QuickCards");
 		
+		createCardSet();
+		
 		root = new Group();
 		
 		scene = new Scene(root, 800, 600);
@@ -46,6 +48,19 @@ public class MainRunner extends Application
 	{
 		CardSet tempCards = new CardSet("Pre-K");
 		Card card1 = new Card("Apple" ,"A red fruit that is tasty");
+		Card card2 = new Card("Pear" ,"A yellow fruit that is tasty");
+		Card card3 = new Card("Lava" ,"Very hot rock");
+		Card card4 = new Card("Boat" ,"Something that floats on water");
 		
+		
+		tempCards.addCard(card1);
+		tempCards.addCard(card2);
+		tempCards.addCard(card3);
+		tempCards.addCard(card4);
+		
+		System.out.println(card1.getDescriptions());
+		
+		
+		testCardSets.add(tempCards);
 	}
 }

@@ -27,7 +27,7 @@ public class Card
 	{
 		this.name = name;
 		descriptions = new ArrayList<String>();
-		
+		descriptions.add(description);
 	}
 	
 	public Card(String name, List<String> descriptions)

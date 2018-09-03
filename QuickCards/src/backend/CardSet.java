@@ -1,5 +1,6 @@
 package backend;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CardSet
@@ -9,12 +10,13 @@ public class CardSet
 	
 	public CardSet()
 	{
-		
+		this("");
 	}
 	
 	public CardSet(String name)
 	{
 		this.name = name;
+		cards = new ArrayList<Card>();
 	}
 
 	public String getName()
