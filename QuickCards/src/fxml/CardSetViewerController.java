@@ -1,12 +1,16 @@
 package fxml;
 
+import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import backend.Card;
 import backend.CardSet;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
 import main.MainRunner;
 
@@ -55,6 +59,18 @@ public class CardSetViewerController implements Initializable
 		display();
 	}
 	
+	public void returnToMainMenu()
+	{
+		try
+		{
+			MainRunner.root.getChildren().setAll((BorderPane)FXMLLoader.load(getClass().getResource("/fxml/MainMenu.fxml")));
+		} 
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
 	private void display()
 	{
 		Card card = cardSet.getCards().get(currentCardIdx);
@@ -63,9 +79,13 @@ public class CardSetViewerController implements Initializable
 			text = card.getQuestion();
 		else
 		{
-			for(String str: card.getExplanations())
+			List<String> expl = card.getExplanations();
+			for(int i = 0; i < expl.size(); i++)
 			{
-				text += str + "\n";
+				if(i + 1 == expl.size())
+					text += expl.get(i);
+				else
+					text += expl.get(i) + "\n";
 			}
 		}
 			

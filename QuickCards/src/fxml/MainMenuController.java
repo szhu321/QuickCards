@@ -57,10 +57,20 @@ public class MainMenuController implements Initializable
 		tempCards.addCard(card3);
 		tempCards.addCard(card4);
 		
-		System.out.println(card1.getExplanations());
+		//System.out.println(card1.getExplanations());
+		CardSet tempCards2 = new CardSet("Middle School");
+		Card card5 = new Card("Determined" ,"Feeling motivated");
+		Card card6 = new Card("Dog" ,"A animal");
+		Card card7 = new Card("American Constitution" ,"A set of rules/laws for the American people");
+		Card card8 = new Card("Sponge Bob" ,"Something that floats on water");
 		
+		tempCards2.addCard(card5);
+		tempCards2.addCard(card6);
+		tempCards2.addCard(card7);
+		tempCards2.addCard(card8);
 		
 		testCardSets.add(tempCards);
+		testCardSets.add(tempCards2);
 	}
 	
 	public void openCardSet(String name)
@@ -71,7 +81,7 @@ public class MainMenuController implements Initializable
 			if(name.equals(cs.getName()))
 				MainRunner.currentCardSet = cs;
 		}
-		System.out.println(name);
+		//System.out.println(name);
 		
 		try
 		{
