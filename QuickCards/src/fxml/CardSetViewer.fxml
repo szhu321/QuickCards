@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="/fxml/CardBox.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.CardSetViewerController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="741.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.CardSetViewerController">
    <center>
-      <VBox alignment="CENTER" minWidth="0.0" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" minWidth="0.0" prefHeight="400.0" prefWidth="806.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox alignment="CENTER" onMouseClicked="#flipCard" prefHeight="100.0" prefWidth="200.0" style="-fx-border-radius: 5px;" styleClass="card">
+            <HBox fx:id="textBoxContainer" alignment="CENTER" onMouseClicked="#flipCard" prefHeight="378.0" prefWidth="719.0" style="-fx-border-radius: 5px;" styleClass="card">
                <children>
                   <Text fx:id="textBox" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="CENTER" prefHeight="36.0" prefWidth="719.0">
+               <children>
+                  <Text fx:id="cardCounterTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                <children>
                   <Button fx:id="previous" mnemonicParsing="false" onMouseClicked="#previous" text="Previous" />
                   <Button fx:id="next" mnemonicParsing="false" onMouseClicked="#next" text="Next" />
@@ -23,6 +29,10 @@
                </children>
             </HBox>
          </children>
+         <stylesheets>
+            <URL value="@UserFriendly.css" />
+            <URL value="@CardBox.css" />
+         </stylesheets>
       </VBox>
    </center>
 </BorderPane>

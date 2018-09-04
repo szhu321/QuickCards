@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import main.MainRunner;
 
@@ -19,6 +20,8 @@ public class CardSetViewerController implements Initializable
 	public Button next;
 	public Button previous;
 	public Text textBox;
+	public HBox textBoxContainer;
+	public Text cardCounterTxt;
 	
 	private CardSet cardSet;
 	private int currentCardIdx;
@@ -73,10 +76,20 @@ public class CardSetViewerController implements Initializable
 	
 	private void display()
 	{
+		if(cardSet.getCards().size() == 0)
+		{
+			String text = "";
+			textBox.setText(text);
+			cardCounterTxt.setText("0 / 0");
+			return;
+		}
 		Card card = cardSet.getCards().get(currentCardIdx);
 		String text = "";
 		if(front)
+		{
 			text = card.getQuestion();
+			textBoxContainer.setStyle("-fx-border-color: blue");
+		}
 		else
 		{
 			List<String> expl = card.getExplanations();
@@ -87,8 +100,10 @@ public class CardSetViewerController implements Initializable
 				else
 					text += expl.get(i) + "\n";
 			}
+			textBoxContainer.setStyle("-fx-border-color: green");
 		}
-			
 		textBox.setText(text);
+		
+		cardCounterTxt.setText(currentCardIdx + 1 + " / " + cardSet.getCards().size());
 	}
 }

@@ -1,5 +1,34 @@
+*
+{
+	-fx-font-size: 16pt;
+}
+
 .button
 {
-	-fx-min-width: 300px;
-	-fx-min-width: 150px;
+	-fx-background-radius: 23px;
+	-fx-background-color: black;
+	-fx-text-fill: white; 
+	-fx-font-size: 16pt;
+	-fx-min-width: 200px;
+	-fx-min-height: 60px;
+	-fx-border-color: black;
+	-fx-border-style: solid;
+	-fx-border-width: 3px;
+	-fx-border-radius: 18px;
+	-fx-cursor: hand;
 }
+
+.button:hover:pressed
+{
+	-fx-background-color: black;
+	-fx-text-fill: white;
+}
+
+
+.button:hover
+{
+	-fx-background-color: white;
+	-fx-text-fill: black;
+}
+
+

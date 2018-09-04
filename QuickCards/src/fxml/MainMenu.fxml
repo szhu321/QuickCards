@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.MainMenuController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@UserFriendly.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.MainMenuController">
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <FlowPane fx:id="cardGrid" prefHeight="200.0" prefWidth="200.0" />
-            <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+            <HBox alignment="CENTER" prefHeight="51.0" prefWidth="600.0">
                <children>
-                  <Button mnemonicParsing="false" text="Select" />
-                  <Button mnemonicParsing="false" text="Delete" />
-               </children></HBox>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Your Card Sets" />
+               </children>
+            </HBox>
+            <FlowPane fx:id="cardGrid" hgap="30.0" prefHeight="200.0" prefWidth="597.0" vgap="30.0">
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </FlowPane>
          </children>
       </VBox>
    </center>

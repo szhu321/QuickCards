@@ -69,8 +69,32 @@ public class MainMenuController implements Initializable
 		tempCards2.addCard(card7);
 		tempCards2.addCard(card8);
 		
+		CardSet tempCards3 = new CardSet("Computer Hardware");
+		Card card9 = new Card("RAM" ,"Random Access Memory");
+		Card card10 = new Card("SSD" ,"Solid State Drive");
+		Card card11 = new Card("HDD" ,"Hard Disk Drive");
+		Card card12 = new Card("USB" ,"Universal Serial Bus");
+		
+		tempCards3.addCard(card9);
+		tempCards3.addCard(card10);
+		tempCards3.addCard(card11);
+		tempCards3.addCard(card12);
+		
+		CardSet tempCards4 = new CardSet("Computer Software");
+		Card card13 = new Card("Operating system" ,"Software that controls a computers basic functions");
+		Card card14 = new Card("Microsoft Word" ,"A nice homework typing station.");
+		Card card15 = new Card("Candy Crush" ,"A game about linking candies.");
+		Card card16 = new Card("BIOS" ,"Basic Input Output System");
+		
+		tempCards4.addCard(card13);
+		tempCards4.addCard(card14);
+		tempCards4.addCard(card15);
+		tempCards4.addCard(card16);
+		
 		testCardSets.add(tempCards);
 		testCardSets.add(tempCards2);
+		testCardSets.add(tempCards3);
+		testCardSets.add(tempCards4);
 	}
 	
 	public void openCardSet(String name)
