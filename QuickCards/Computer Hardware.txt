@@ -1,0 +1,4 @@
+RAM@#Random Access Memory
+SSD@#Solid State Drive
+HDD@#Hard Disk Drive
+USB@#Universal Serial Bus

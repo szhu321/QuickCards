@@ -1,0 +1,4 @@
+Apple@#A red fruit that is tasty
+Pear@#A yellow fruit that is tasty
+Lava@#Very hot rock
+Boat@#Something that floats on water
