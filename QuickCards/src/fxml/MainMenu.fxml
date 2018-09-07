@@ -9,7 +9,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@UserFriendly.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.MainMenuController">
    <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="420.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER" prefHeight="51.0" prefWidth="600.0">
                <children>
@@ -24,6 +24,12 @@
                   <Insets />
                </VBox.margin>
             </FlowPane>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="CENTER" prefHeight="37.0" prefWidth="600.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Local Cards" />
+               </children>
+            </HBox>
          </children>
       </VBox>
    </center>

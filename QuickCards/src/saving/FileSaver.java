@@ -1,5 +1,6 @@
 package saving;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Formatter;
 import java.util.List;
@@ -15,9 +16,10 @@ public class FileSaver
 	
 	public FileSaver(String name)
 	{
+		createCardSetSavesFolder();
 		try
 		{
-			formatter = new Formatter(name + ".txt");
+			formatter = new Formatter("saves/cardsets/" + name + ".txt");
 			System.out.println("File Created");
 		}
 		catch (FileNotFoundException e)
@@ -60,5 +62,23 @@ public class FileSaver
 			fs.writeCardToFile(card);
 		}
 		fs.closeFile();
+	}
+	
+	public static void createCardSetSavesFolder()
+	{
+		File file = new File("saves");
+		if(!file.exists())
+		{
+			file.mkdirs();
+			//System.out.println("saves directory was successfully created.");
+		}
+		
+		File file2 = new File("saves/cardsets");
+		if(!file2.exists())
+		{
+			file2.mkdirs();
+			//System.out.println("saves/players directory was successfully created.");
+		}
+	
 	}
 }
