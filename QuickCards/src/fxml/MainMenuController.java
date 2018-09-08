@@ -14,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import main.MainRunner;
+import saving.FileReader;
 import saving.FileSaver;
 
 public class MainMenuController implements Initializable
@@ -101,6 +102,9 @@ public class MainMenuController implements Initializable
 //		FileSaver.writeCardSetToFile(tempCards2);
 //		FileSaver.writeCardSetToFile(tempCards3);
 //		FileSaver.writeCardSetToFile(tempCards4);
+		
+		CardSet[] localCards = FileReader.getLocalCardSets();
+		
 	}
 	
 	public void openCardSet(String name)
