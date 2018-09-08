@@ -20,19 +20,22 @@ import saving.FileSaver;
 public class MainMenuController implements Initializable
 {
 	public FlowPane cardGrid;
+	public FlowPane localCardGrid;
 	private List<CardSet> testCardSets;
+	private List<CardSet> localCards;
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) 
 	{
 		createCardSet();
 		displayCardSets(testCardSets);
+		displayLocalCardSets(localCards);
 	}
 	
 	private void displayCardSets(List<CardSet> cardSet)
 	{
 		cardGrid.getChildren().removeAll();
-		for(CardSet cardset: testCardSets)
+		for(CardSet cardset: cardSet)
 		{
 			Button btn = new Button(cardset.getName());
 			btn.setOnAction(event -> 
@@ -40,6 +43,20 @@ public class MainMenuController implements Initializable
 				openCardSet(((Button)event.getSource()).getText());
 			});
 			cardGrid.getChildren().add(btn);
+		}
+	}
+	
+	private void displayLocalCardSets(List<CardSet> cardSet)
+	{
+		localCardGrid.getChildren().removeAll();
+		for(CardSet cardset: cardSet)
+		{
+			Button btn = new Button(cardset.getName());
+			btn.setOnAction(event -> 
+			{
+				openCardSet(((Button)event.getSource()).getText());
+			});
+			localCardGrid.getChildren().add(btn);
 		}
 	}
 	
@@ -103,8 +120,8 @@ public class MainMenuController implements Initializable
 //		FileSaver.writeCardSetToFile(tempCards3);
 //		FileSaver.writeCardSetToFile(tempCards4);
 		
-		CardSet[] localCards = FileReader.getLocalCardSets();
-		
+		localCards = FileReader.getLocalCardSets();
+		//System.out.println(localCards);
 	}
 	
 	public void openCardSet(String name)

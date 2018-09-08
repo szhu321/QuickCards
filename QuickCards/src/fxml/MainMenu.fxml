@@ -30,6 +30,7 @@
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Local Cards" />
                </children>
             </HBox>
+            <FlowPane fx:id="localCardGrid" prefHeight="200.0" prefWidth="200.0" />
          </children>
       </VBox>
    </center>

@@ -55,4 +55,14 @@ public class CardSet
 	public int getSize() {
 		return cards.size();
 	}
+	
+	public String toString()
+	{
+		String result = "";
+		for(Card card : cards)
+		{
+			result += card.toString();
+		}
+		return result;
+	}
 }
