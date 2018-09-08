@@ -22,6 +22,7 @@ public class MainRunner extends Application
 	//Testing variables
 	public static List<CardSet> testCardSet;
 	public static CardSet currentCardSet;
+	public static List<CardSet> localCardSet;
 	
 	//Launches the program. Launch calls the start method.
 	public static void main(String[] args)

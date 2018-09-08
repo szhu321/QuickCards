@@ -25,7 +25,10 @@ public class FileReader
 		List<CardSet> cardSets = new ArrayList<CardSet>();
 		for(File file : files)
 		{
-			CardSet cardset = new CardSet(file.getName());
+			String name = file.getName();
+			name = name.substring(0, name.length() - 4);
+			CardSet cardset = new CardSet(name);
+			//System.out.println(name);
 			try
 			{
 				Scanner sn = new Scanner(file);

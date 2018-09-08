@@ -54,7 +54,7 @@ public class MainMenuController implements Initializable
 			Button btn = new Button(cardset.getName());
 			btn.setOnAction(event -> 
 			{
-				openCardSet(((Button)event.getSource()).getText());
+				openLocalCardSet(((Button)event.getSource()).getText());
 			});
 			localCardGrid.getChildren().add(btn);
 		}
@@ -128,6 +128,26 @@ public class MainMenuController implements Initializable
 	{
 		MainRunner.testCardSet = testCardSets;
 		for(CardSet cs: testCardSets)
+		{
+			if(name.equals(cs.getName()))
+				MainRunner.currentCardSet = cs;
+		}
+		//System.out.println(name);
+		
+		try
+		{
+			MainRunner.root.getChildren().setAll((BorderPane)FXMLLoader.load(getClass().getResource("/fxml/CardSetViewer.fxml")));
+		} 
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	public void openLocalCardSet(String name)
+	{
+		MainRunner.localCardSet = localCards;
+		for(CardSet cs: localCards)
 		{
 			if(name.equals(cs.getName()))
 				MainRunner.currentCardSet = cs;

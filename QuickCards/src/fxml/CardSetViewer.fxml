@@ -13,7 +13,7 @@
          <children>
             <HBox fx:id="textBoxContainer" alignment="CENTER" onMouseClicked="#flipCard" prefHeight="378.0" prefWidth="719.0" style="-fx-border-radius: 5px;" styleClass="card">
                <children>
-                  <Text fx:id="textBox" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                  <Text fx:id="textBox" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="500.0" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="36.0" prefWidth="719.0">
