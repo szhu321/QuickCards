@@ -46,6 +46,9 @@ public class MainRunner extends Application
 		window.setScene(scene);
 		window.show();
 		
+		String str = "HEllO@# ";
+		String[] strarr = str.split("@#");
+		System.out.println(strarr.length);
 	}
 	
 	

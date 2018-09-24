@@ -38,11 +38,15 @@ public class FileReader
 					if(str.equals(""))
 						continue;
 					String[] mainSplit = str.split(FileSaver.FRONT_BACK_SEPERATOR);
-					String[] otherSplit = mainSplit[1].split(FileSaver.BACK_EXPLAN_SEPERATOR);
+					
 					Card tempCard = new Card(mainSplit[0]);
+					if(mainSplit.length > 1)
+					{
+						String[] otherSplit = mainSplit[1].split(FileSaver.BACK_EXPLAN_SEPERATOR);
 					for(String e : otherSplit)
 					{
 						tempCard.addExplanation(e);
+					}
 					}
 					cardset.addCard(tempCard);
 				}

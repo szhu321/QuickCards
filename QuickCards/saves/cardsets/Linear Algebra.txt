@@ -1,0 +1,8 @@
+Vector@#A arrow in space that has a length and a direction.
+Scalars@#A number that is used to multiply a vector.
+basis@#The basis of a vector space is a set of linearly independent vectors that span the full space.
+Linear Combination@#vector addtion with scalars. av + bw. The "span" of v and w is the set of all their linear combinations.
+Linearly dependent@#One of the vectors is already in the span of the others and thus redundant to the overall span of the vectors.
+Linearly independent@#If a vector added another dimenision to the span.
+Linear Transformations@#Using a function to transform a vector. All lines in linear transformation will remain lines and the orgin will not move.
+Directional Vector@# 
