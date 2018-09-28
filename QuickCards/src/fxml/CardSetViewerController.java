@@ -87,12 +87,12 @@ public class CardSetViewerController implements Initializable
 		String text = "";
 		if(front)
 		{
-			text = card.getQuestion();
+			text = card.getFront();
 			textBoxContainer.setStyle("-fx-border-color: blue");
 		}
 		else
 		{
-			List<String> expl = card.getExplanations();
+			List<String> expl = card.getBack();
 			for(int i = 0; i < expl.size(); i++)
 			{
 				if(i + 1 == expl.size())

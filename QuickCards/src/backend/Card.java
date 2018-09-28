@@ -5,12 +5,12 @@ import java.util.List;
 
 /**
  * @author Sheng
- * A single card contains a question and a Explanation.
+ * A single card contains a front and a Explanation.
  */
 public class Card
 {
-	private String question; //change to something more inclusive of all entries
-	private List<String> explanations;
+	private String front; //change to something more inclusive of all entries
+	private List<String> back;
 	private int timesPlayed;
 	private int timesGottenWrong;
 	
@@ -19,74 +19,74 @@ public class Card
 		this("N/A");
 	}
 	
-	public Card(String question)
+	public Card(String front)
 	{
-		this.question = question;
-		explanations = new ArrayList<String>();
+		this.front = front;
+		back = new ArrayList<String>();
 	}
 	
-	public Card(String question, String explanation)
+	public Card(String front, String explanation)
 	{
-		this.question = question;
-		explanations = new ArrayList<String>();
-		explanations.add(explanation);
+		this.front = front;
+		back = new ArrayList<String>();
+		back.add(explanation);
 	}
 	
-	public Card(String question, List<String> explanations)
+	public Card(String front, List<String> back)
 	{
-		this.question = question;
-		if(explanations == null)
-			this.explanations = new ArrayList<String>();
+		this.front = front;
+		if(back == null)
+			this.back = new ArrayList<String>();
 		else
-			this.explanations = explanations;
+			this.back = back;
 	}
 	
 	public String toString()
 	{
 		String info = "";
-		for(String desc: explanations)
+		for(String desc: back)
 			info += desc + "\n";
 		if(info.equals(""))
 			info = "No Explanation";
-		return question + "\n" + info;
+		return front + "\n" + info;
 	}
 
-	public String getQuestion()
+	public String getFront()
 	{
-		return question;
+		return front;
 	}
 
-	public void setQuestion(String question)
+	public void setFront(String front)
 	{
-		this.question = question;
+		this.front = front;
 	}
 
-	public List<String> getExplanations()
+	public List<String> getBack()
 	{
-		return explanations;
+		return back;
 	}
 	
-	public String getStringExplanations() {
+	public String getStringback() {
 		String result = "";
-		for(String s:explanations) {
+		for(String s:back) {
 			result += s + "\n";
 		}
 		return result;
 	}
 
-	public void setExplanations(List<String> explanations)
+	public void setBack(List<String> back)
 	{
-		this.explanations = explanations;
+		this.back = back;
 	}
 	
 	public void addExplanation(String str)
 	{
-		explanations.add(str);
+		back.add(str);
 	}
 	
 	public void removeExplanation(int idx)
 	{
-		explanations.remove(idx);
+		back.remove(idx);
 	}
 	
 	public void incrementTimesPlayed()

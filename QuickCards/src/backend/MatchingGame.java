@@ -28,9 +28,9 @@ public class MatchingGame {
 			for(int i = 0; i < 2; i++) {
 				a = getRandomCoordinates();
 				if(i == 0) {
-					field[a[0]][a[1]] = c.getQuestion();
+					field[a[0]][a[1]] = c.getFront();
 				}else {
-					field[a[0]][a[1]] = c.getStringExplanations();
+					field[a[0]][a[1]] = c.getStringback();
 				}
 			}
 		}
@@ -68,7 +68,7 @@ public class MatchingGame {
 	
 	public boolean checkMatch(String s1, String s2) {
 		for(Card c:currentCards) {
-			if(c.getQuestion().equals(s1) && c.getStringExplanations().equals(s2) || c.getQuestion().equals(s2) && c.getStringExplanations().equals(s1))
+			if(c.getFront().equals(s1) && c.getStringback().equals(s2) || c.getFront().equals(s2) && c.getStringback().equals(s1))
 				return true;
 		}
 		return false;

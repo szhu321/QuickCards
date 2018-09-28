@@ -20,7 +20,7 @@ public class FileSaver
 		try
 		{
 			formatter = new Formatter("saves/cardsets/" + name + ".txt");
-			System.out.println("File Created");
+			//System.out.println("File Created");
 		}
 		catch (FileNotFoundException e)
 		{
@@ -41,8 +41,8 @@ public class FileSaver
 	public void writeCardToFile(Card card)
 	{
 		String result = "";
-		result += card.getQuestion() + FRONT_BACK_SEPERATOR;
-		List<String> explanations = card.getExplanations();
+		result += card.getFront() + FRONT_BACK_SEPERATOR;
+		List<String> explanations = card.getBack();
 		for(int i = 0; i < explanations.size(); i++)
 		{
 			if(i < explanations.size() - 1)
