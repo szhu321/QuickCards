@@ -66,9 +66,9 @@ public class CardSetViewerController implements Initializable
 	{
 		try
 		{
-			MainRunner.root.getChildren().setAll((BorderPane)FXMLLoader.load(getClass().getResource("/fxml/MainMenu.fxml")));
+			MainRunner.getSceneSelector().switchToMainMenu();
 		} 
-		catch (IOException e)
+		catch (Exception e)
 		{
 			e.printStackTrace();
 		}

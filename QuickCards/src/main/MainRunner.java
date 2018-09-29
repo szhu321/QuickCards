@@ -3,6 +3,7 @@ package main;
 import java.util.List;
 
 import backend.CardSet;
+import backend.CardStorage;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
@@ -12,14 +13,16 @@ import javafx.stage.Stage;
 
 public class MainRunner extends Application
 {
-	public static Stage window;
-	public static Scene scene;
-	public static Group root;
+	private static Stage window;
+	private static SceneChanger sceneChanger;
 	
 	//Testing variables
 	public static List<CardSet> testCardSet;
 	public static CardSet currentCardSet;
 	public static List<CardSet> localCardSet;
+	
+	//RealDeal
+	public static CardStorage cardStorage;
 	
 	//Launches the program. Launch calls the start method.
 	public static void main(String[] args)
@@ -33,20 +36,21 @@ public class MainRunner extends Application
 	{
 		window = mainStage;
 		window.setTitle("QuickCards");
+		sceneChanger = new SceneChanger(window);
+		sceneChanger.switchToCardSetSelector();
 		
-		root = new Group();
 		
-		scene = new Scene(root, 800, 600);
 		//root.getChildren().setAll((BorderPane)FXMLLoader.load(getClass().getResource("/fxml/MainMenu.fxml")));
-		BorderPane bp = (BorderPane)FXMLLoader.load(getClass().getResource("/fxml/CardSetSelector.fxml"));
-		root.getChildren().add(bp);
-		window.setScene(scene);
+		//BorderPane bp = (BorderPane)FXMLLoader.load(getClass().getResource("/fxml/CardSetSelector.fxml"));
 		window.show();
 		
-		String str = "HEllO@# ";
-		String[] strarr = str.split("@#");
+		//String str = "HEllO@# ";
+		//String[] strarr = str.split("@#");
 		//System.out.println(strarr.length);
 	}
 	
-	
+	public static SceneChanger getSceneSelector()
+	{
+		return sceneChanger;
+	}
 }

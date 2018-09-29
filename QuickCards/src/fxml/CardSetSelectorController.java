@@ -133,11 +133,12 @@ public class CardSetSelectorController implements Initializable
 		}
 		//System.out.println(name);
 		
+
 		try
 		{
-			MainRunner.root.getChildren().setAll((BorderPane)FXMLLoader.load(getClass().getResource("/fxml/CardSetViewer.fxml")));
+			MainRunner.getSceneSelector().switchToCardSetViewer();
 		} 
-		catch (IOException e)
+		catch (Exception e)
 		{
 			e.printStackTrace();
 		}
@@ -155,9 +156,9 @@ public class CardSetSelectorController implements Initializable
 		
 		try
 		{
-			MainRunner.root.getChildren().setAll((BorderPane)FXMLLoader.load(getClass().getResource("/fxml/CardSetViewer.fxml")));
+			MainRunner.getSceneSelector().switchToCardSetViewer();
 		} 
-		catch (IOException e)
+		catch (Exception e)
 		{
 			e.printStackTrace();
 		}
