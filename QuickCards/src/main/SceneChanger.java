@@ -62,4 +62,16 @@ public class SceneChanger
 			e.printStackTrace();
 		}
 	}
+	
+	public void switchToCardCreater()
+	{
+		try
+		{
+			root.getChildren().setAll((BorderPane)FXMLLoader.load(getClass().getResource("/fxml/CardCreater.fxml")));
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+	}
 }

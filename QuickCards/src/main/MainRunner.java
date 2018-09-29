@@ -5,10 +5,6 @@ import java.util.List;
 import backend.CardSet;
 import backend.CardManager;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
-import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class MainRunner extends Application
@@ -17,9 +13,9 @@ public class MainRunner extends Application
 	private static SceneChanger sceneChanger;
 	
 	//Testing variables
-	public static List<CardSet> testCardSet;
-	public static CardSet currentCardSet;
-	public static List<CardSet> localCardSet;
+//	public static List<CardSet> testCardSet;
+//	public static CardSet currentCardSet;
+//	public static List<CardSet> localCardSet;
 	
 	//RealDeal
 	private static CardManager cardManager;

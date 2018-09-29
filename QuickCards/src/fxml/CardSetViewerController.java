@@ -28,7 +28,7 @@ public class CardSetViewerController implements Initializable
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) 
 	{
-		cardSet = MainRunner.currentCardSet;
+		cardSet = MainRunner.getCardManager().getCurrentCardSet();
 		currentCardIdx = 0;
 		front = true;
 		display();

@@ -133,7 +133,7 @@ public class CardSetSelectorController implements Initializable
 		for(CardSet cs: cardSets)
 		{
 			if(name.equals(cs.getName()))
-				MainRunner.currentCardSet = cs;
+				MainRunner.getCardManager().setCurrentCardSet(cs);
 		}
 		//System.out.println(name);
 		MainRunner.getSceneSelector().switchToCardSetViewer();
