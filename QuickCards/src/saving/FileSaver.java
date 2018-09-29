@@ -54,7 +54,8 @@ public class FileSaver
 		writeToFile(result);
 	}
 	
-	public static void writeCardSetToFile(CardSet cardset)
+	//todo: find a way so that the file wont override.
+	private static void writeCardSetToFile(CardSet cardset)
 	{
 		FileSaver fs = new FileSaver(cardset.getName());
 		for(Card card: cardset.getCards())
@@ -64,7 +65,7 @@ public class FileSaver
 		fs.closeFile();
 	}
 	
-	public static void createCardSetSavesFolder()
+	private static void createCardSetSavesFolder()
 	{
 		File file = new File("saves");
 		if(!file.exists())

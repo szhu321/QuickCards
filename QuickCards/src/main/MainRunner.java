@@ -3,7 +3,7 @@ package main;
 import java.util.List;
 
 import backend.CardSet;
-import backend.CardStorage;
+import backend.CardManager;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
@@ -22,7 +22,7 @@ public class MainRunner extends Application
 	public static List<CardSet> localCardSet;
 	
 	//RealDeal
-	public static CardStorage cardStorage;
+	private static CardManager cardManager;
 	
 	//Launches the program. Launch calls the start method.
 	public static void main(String[] args)
@@ -37,7 +37,7 @@ public class MainRunner extends Application
 		window = mainStage;
 		window.setTitle("QuickCards");
 		sceneChanger = new SceneChanger(window);
-		sceneChanger.switchToCardSetSelector();
+		sceneChanger.switchToMainMenu();
 		
 		
 		//root.getChildren().setAll((BorderPane)FXMLLoader.load(getClass().getResource("/fxml/MainMenu.fxml")));
@@ -49,8 +49,22 @@ public class MainRunner extends Application
 		//System.out.println(strarr.length);
 	}
 	
+	/**
+	 * 
+	 * @return Returns the static sceneChanger connected to the main runner.
+	 */
 	public static SceneChanger getSceneSelector()
 	{
 		return sceneChanger;
+	}
+
+	public static CardManager getCardManager()
+	{
+		return cardManager;
+	}
+
+	public static void setCardManager(CardManager cardManager)
+	{
+		MainRunner.cardManager = cardManager;
 	}
 }

@@ -1,5 +1,7 @@
 package main;
 
+import java.io.IOException;
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -20,18 +22,44 @@ public class SceneChanger
 		this.window.setScene(scene);
 	}
 	
-	public void switchToMainMenu() throws Exception
+	public void closeWindow()
 	{
-		root.getChildren().setAll((BorderPane)FXMLLoader.load(getClass().getResource("/fxml/MainMenu.fxml")));
+		window.close();
 	}
 	
-	public void switchToCardSetViewer() throws Exception
+	public void switchToMainMenu()
 	{
-		root.getChildren().setAll((BorderPane)FXMLLoader.load(getClass().getResource("/fxml/CardSetViewer.fxml")));
+		try
+		{
+			root.getChildren().setAll((BorderPane)FXMLLoader.load(getClass().getResource("/fxml/MainMenu.fxml")));
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
 	}
 	
-	public void switchToCardSetSelector() throws Exception
+	public void switchToCardSetViewer()
 	{
-		root.getChildren().setAll((BorderPane)FXMLLoader.load(getClass().getResource("/fxml/CardSetSelector.fxml")));
+		try
+		{
+			root.getChildren().setAll((BorderPane)FXMLLoader.load(getClass().getResource("/fxml/CardSetViewer.fxml")));
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	public void switchToCardSetSelector()
+	{
+		try
+		{
+			root.getChildren().setAll((BorderPane)FXMLLoader.load(getClass().getResource("/fxml/CardSetSelector.fxml")));
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
 	}
 }
