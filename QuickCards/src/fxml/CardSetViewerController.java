@@ -59,16 +59,14 @@ public class CardSetViewerController implements Initializable
 		display();
 	}
 	
-	public void returnToMainMenu()
+	public void addCardOnClick()
 	{
-		try
-		{
-			MainRunner.getSceneSelector().switchToMainMenu();
-		} 
-		catch (Exception e)
-		{
-			e.printStackTrace();
-		}
+		MainRunner.getSceneSelector().switchToCardCreater();
+	}
+	
+	public void returnToSelector()
+	{
+		MainRunner.getSceneSelector().switchToCardSetSelector();
 	}
 	
 	private void display()

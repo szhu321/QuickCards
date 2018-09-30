@@ -9,23 +9,28 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="741.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.CardSetViewerController">
    <center>
-      <VBox alignment="CENTER" minWidth="0.0" prefHeight="400.0" prefWidth="806.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" minWidth="0.0" prefHeight="400.0" prefWidth="806.0" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="90.0" prefWidth="741.0">
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#addCardOnClick" text="Add Card" />
+               </children>
+            </HBox>
             <HBox fx:id="textBoxContainer" alignment="CENTER" onMouseClicked="#flipCard" prefHeight="378.0" prefWidth="719.0" style="-fx-border-radius: 5px;" styleClass="card">
                <children>
-                  <Text fx:id="textBox" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="500.0" />
+                  <Text fx:id="textBox" strokeType="OUTSIDE" strokeWidth="0.0" text="Card Txt" textAlignment="CENTER" wrappingWidth="500.0" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="36.0" prefWidth="719.0">
                <children>
-                  <Text fx:id="cardCounterTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                  <Text fx:id="cardCounterTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="Card Number" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
                <children>
                   <Button fx:id="previous" mnemonicParsing="false" onMouseClicked="#previous" text="Previous" />
                   <Button fx:id="next" mnemonicParsing="false" onMouseClicked="#next" text="Next" />
-                  <Button mnemonicParsing="false" onMouseClicked="#returnToMainMenu" text="BackTo Main Menu" />
+                  <Button mnemonicParsing="false" onMouseClicked="#returnToSelector" text="Exit" />
                </children>
             </HBox>
          </children>

@@ -54,6 +54,17 @@ public class FileSaver
 		writeToFile(result);
 	}
 	
+	public static void writeCardToCardSet(CardSet cardset, Card tempcard)
+	{
+		FileSaver fs = new FileSaver(cardset.getName());
+		for(Card card: cardset.getCards())
+		{
+			fs.writeCardToFile(card);
+		}
+		fs.writeCardToFile(tempcard);
+		fs.closeFile();
+	}
+	
 	//todo: find a way so that the file wont override.
 	private static void writeCardSetToFile(CardSet cardset)
 	{
