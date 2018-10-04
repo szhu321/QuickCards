@@ -1,8 +1,5 @@
 package main;
 
-import java.util.List;
-
-import backend.CardSet;
 import backend.CardManager;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -40,6 +37,7 @@ public class MainRunner extends Application
 		//BorderPane bp = (BorderPane)FXMLLoader.load(getClass().getResource("/fxml/CardSetSelector.fxml"));
 		window.show();
 		
+		//System.out.println(String.format("%s", 2.300010));
 		//String str = "HEllO@# ";
 		//String[] strarr = str.split("@#");
 		//System.out.println(strarr.length);

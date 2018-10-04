@@ -9,4 +9,4 @@ Civil society@#Voluntary organizations that allow communities to flourish.
 Conservatives@#Individuals who distrust government, believing that free markets offer better ways than government involvement to improve people's livelihood. In the social sphere, conservatives have more faith in government's ability to enforce traditional values.
 Constitutional system@#System of govenment in which people set up and agree on the basic rules and procedures that will govern them.
 Democracy@#System of government in which the supreme power is vested in the people and exercised by them either directly or through elected representatives.
-
+1st Amendment@#freedom of speech, religion, press.

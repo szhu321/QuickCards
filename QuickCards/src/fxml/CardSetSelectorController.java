@@ -139,6 +139,11 @@ public class CardSetSelectorController implements Initializable
 		MainRunner.getSceneSelector().switchToCardSetViewer();
 	}
 	
+	public void menuBtnOnClick()
+	{
+		MainRunner.getSceneSelector().switchToMainMenu();
+	}
+	
 //	public void openLocalCardSet(String name)
 //	{
 //		MainRunner.localCardSet = localCards;

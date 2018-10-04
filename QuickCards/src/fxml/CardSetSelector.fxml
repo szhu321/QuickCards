@@ -11,14 +11,12 @@
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <FlowPane fx:id="cardGrid" hgap="30.0" translateY="30.0" vgap="30.0">
-               <padding>
-                  <Insets top="20.0" />
-               </padding>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </FlowPane>
+            <ScrollPane prefHeight="358.0" prefWidth="600.0">
+               <content>
+                  <FlowPane fx:id="cardGrid" hgap="30.0" prefHeight="188.0" prefWidth="571.0" vgap="30.0" />
+               </content>
+            </ScrollPane>
+            <Button mnemonicParsing="false" onMouseClicked="#menuBtnOnClick" text="Main Menu" />
          </children>
       </VBox>
    </center>
