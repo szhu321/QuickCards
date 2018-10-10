@@ -7,6 +7,7 @@ import java.util.List;
 
 import backend.Card;
 import backend.CardSet;
+import myutilities.FileUtil;
 
 public class FileSaver
 {
@@ -66,14 +67,32 @@ public class FileSaver
 	}
 	
 	//todo: find a way so that the file wont override.
-	private static void writeCardSetToFile(CardSet cardset)
+	public static void writeCardSetToFile(CardSet cardset)
 	{
-		FileSaver fs = new FileSaver(cardset.getName());
+		String cardsetName = cardset.getName();
+		if(isFileInSavesFolder(cardset.getName() + "txt"))
+		{
+			cardsetName = cardset.getName() + "(1)";
+		}
+		FileSaver fs = new FileSaver(cardsetName);
 		for(Card card: cardset.getCards())
 		{
 			fs.writeCardToFile(card);
 		}
 		fs.closeFile();
+	}
+	
+	public static boolean isFileInSavesFolder(String name)
+	{
+		File[] allFiles = FileUtil.getAllTxtFilesFromDir("saves/cardsets");
+		if(allFiles == null)
+			return false;
+		for(File file: allFiles)
+		{
+			if(file.getName().equals(name))
+				return true;
+		}
+		return false;
 	}
 	
 	private static void createCardSetSavesFolder()

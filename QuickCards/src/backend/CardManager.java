@@ -34,7 +34,7 @@ public class CardManager
 	//useful methods
 	public void addCardSetAndSave(CardSet cardset)
 	{
-		//FileSaver.writeCardSetToFile(cardset);
+		FileSaver.writeCardSetToFile(cardset);
 	}
 	
 	//getters and setters

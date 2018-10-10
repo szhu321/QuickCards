@@ -61,4 +61,17 @@ public class FileReader
 		//System.out.println("Pass 1");
 		return cardSets;
 	}
+	
+	public static List<String> getAllFileNames()
+	{
+		File[] files = FileUtil.getAllTxtFilesFromDir("saves/cardsets");
+		List<String> result = new ArrayList<String>();
+		for(File file : files)
+		{
+			String name = file.getName();
+			name = name.substring(0, name.length() - 4);
+			result.add(name);
+		}
+		return result;
+	}
 }

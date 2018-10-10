@@ -41,6 +41,9 @@ public class MainRunner extends Application
 		//String str = "HEllO@# ";
 		//String[] strarr = str.split("@#");
 		//System.out.println(strarr.length);
+//		String text = "1.1";
+//		String[] nums = text.split("0.");
+//		System.out.println(nums.length);
 	}
 	
 	/**
