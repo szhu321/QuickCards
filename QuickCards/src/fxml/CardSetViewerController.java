@@ -64,6 +64,11 @@ public class CardSetViewerController implements Initializable
 		MainRunner.getSceneSelector().switchToCardCreater();
 	}
 	
+	public void removeBtnOnClick()
+	{
+		MainRunner.getSceneSelector().switchToCardRemover();
+	}
+	
 	public void returnToSelector()
 	{
 		MainRunner.getSceneSelector().switchToCardSetSelector();

@@ -86,4 +86,16 @@ public class SceneChanger
 			e.printStackTrace();
 		}
 	}
+	
+	public void switchToCardRemover()
+	{
+		try
+		{
+			root.getChildren().setAll((BorderPane)FXMLLoader.load(getClass().getResource("/fxml/CardRemover.fxml")));
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+	}
 }

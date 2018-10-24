@@ -13,6 +13,7 @@
          <children>
             <HBox alignment="CENTER_RIGHT" prefHeight="90.0" prefWidth="741.0">
                <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#removeBtnOnClick" text="Remove" />
                   <Button mnemonicParsing="false" onMouseClicked="#addCardOnClick" text="Add Card" />
                </children>
             </HBox>

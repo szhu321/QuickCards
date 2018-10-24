@@ -27,6 +27,8 @@ public class CardCreaterController implements Initializable
 	{
 		Card tempCard = new Card();
 		tempCard.setFront(frontSideTxt.getText());
+		if(frontSideTxt.getText().equals(""))
+			return;
 		tempCard.addExplanation(backSideTxt.getText());
 		frontSideTxt.setText("");
 		backSideTxt.setText("");
@@ -37,7 +39,10 @@ public class CardCreaterController implements Initializable
 				tempCardSet = cardsets;
 		}
 		if(tempCardSet != null)
+		{
 			FileSaver.writeCardToCardSet(tempCardSet, tempCard);
+			tempCardSet.addCard(tempCard);
+		}
 		else
 			System.out.println("tempCardSet is null");
 	}
