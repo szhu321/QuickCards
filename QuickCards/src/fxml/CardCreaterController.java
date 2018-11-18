@@ -47,8 +47,8 @@ public class CardCreaterController implements Initializable
 			System.out.println("tempCardSet is null");
 	}
 	
-	public void exitToMainMenuOnClick()
+	public void backBtnOnClick()
 	{
-		MainRunner.getSceneSelector().switchToMainMenu();
+		MainRunner.getSceneSelector().switchToCardSetViewer();
 	}
 }

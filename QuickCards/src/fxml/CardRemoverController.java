@@ -58,4 +58,14 @@ public class CardRemoverController implements Initializable
 		removedCardSet.addCard(currentCardSet.getCards().remove(idx));
 		display();
 	}
+	
+	public void backBtnOnclick()
+	{
+		MainRunner.getSceneSelector().switchToCardSetViewer();
+	}
+	
+	public void removeBtnOnclick()
+	{
+		//todo: add the remove function to remove the selected cards.
+	}
 }

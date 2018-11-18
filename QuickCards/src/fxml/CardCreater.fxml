@@ -30,7 +30,7 @@
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
                <children>
                   <Button mnemonicParsing="false" onMouseClicked="#addAndSaveOnClick" text="Add and Save" />
-                  <Button mnemonicParsing="false" onMouseClicked="#exitToMainMenuOnClick" text="Exit to MainMenu" />
+                  <Button mnemonicParsing="false" onMouseClicked="#backBtnOnClick" text="Back" />
                </children>
             </HBox>
          </children>
