@@ -7,6 +7,7 @@ import backend.Card;
 import backend.CardSet;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import main.MainRunner;
 import saving.FileSaver;
@@ -14,7 +15,7 @@ import saving.FileSaver;
 public class CardCreaterController implements Initializable
 {
 	public TextField frontSideTxt;
-	public TextField backSideTxt;
+	public TextArea backSideTxt;
 	public TextField cardSetTxtBox;
 	
 	@Override
