@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import main.MainRunner;
+import saving.FileSaver;
 
 public class CardRemoverController implements Initializable
 {
@@ -67,5 +68,8 @@ public class CardRemoverController implements Initializable
 	public void removeBtnOnclick()
 	{
 		//todo: add the remove function to remove the selected cards.
+		FileSaver.writeCardSetToFile(currentCardSet);
+		removedCardSet = new CardSet(currentCardSet.getName());
+		display();
 	}
 }

@@ -70,10 +70,10 @@ public class FileSaver
 	public static void writeCardSetToFile(CardSet cardset)
 	{
 		String cardsetName = cardset.getName();
-		if(isFileInSavesFolder(cardset.getName() + "txt"))
-		{
-			cardsetName = cardset.getName() + "(1)";
-		}
+//		if(isFileInSavesFolder(cardset.getName() + ".txt"))
+//		{
+//			cardsetName = cardset.getName() + "(1)";
+//		}
 		FileSaver fs = new FileSaver(cardsetName);
 		for(Card card: cardset.getCards())
 		{

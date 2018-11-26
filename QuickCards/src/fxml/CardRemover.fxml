@@ -26,7 +26,7 @@
             <HBox prefHeight="100.0" prefWidth="200.0" spacing="100.0">
                <children>
                   <Button mnemonicParsing="false" onMouseClicked="#backBtnOnclick" text="Back" />
-                  <Button mnemonicParsing="false" text="Remove Cards" />
+                  <Button mnemonicParsing="false" onMouseClicked="#removeBtnOnclick" text="Remove Cards" />
                </children>
             </HBox>
          </children>
