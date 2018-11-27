@@ -67,7 +67,7 @@ public class CardRemoverController implements Initializable
 	
 	public void removeBtnOnclick()
 	{
-		//todo: add the remove function to remove the selected cards.
+		//remove the selected cards.
 		FileSaver.writeCardSetToFile(currentCardSet);
 		removedCardSet = new CardSet(currentCardSet.getName());
 		display();

@@ -69,11 +69,19 @@ public class CardSetViewerController implements Initializable
 		MainRunner.getSceneSelector().switchToCardRemover();
 	}
 	
+	public void editBtnOnclick()
+	{
+		//todo: add a edit function.
+	}
+	
 	public void returnToSelector()
 	{
 		MainRunner.getSceneSelector().switchToCardSetSelector();
 	}
 	
+	/**
+	 * Displays the current card on screen.
+	 */
 	private void display()
 	{
 		if(cardSet.getCards().size() == 0)
@@ -84,6 +92,8 @@ public class CardSetViewerController implements Initializable
 			return;
 		}
 		Card card = cardSet.getCards().get(currentCardIdx);
+		//set the current card in card manager.
+		MainRunner.getCardManager().setCurrentCard(card);
 		String text = "";
 		if(front)
 		{

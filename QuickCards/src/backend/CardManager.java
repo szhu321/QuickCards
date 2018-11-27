@@ -16,10 +16,16 @@ public class CardManager
 	 * All The cards loaded into this CardManager.
 	 */
 	private List<CardSet> allCardSets;
+	
 	/**
 	 * The currentCardSets used by this manager.
 	 */
 	private CardSet currentCardSet;
+	
+	/**
+	 * The current Card that is being used.
+	 */
+	private Card currentCard;
 	
 	public CardManager()
 	{
@@ -52,4 +58,15 @@ public class CardManager
 	{
 		this.currentCardSet = currentCardSet;
 	}
+
+	public Card getCurrentCard()
+	{
+		return currentCard;
+	}
+
+	public void setCurrentCard(Card currentCard)
+	{
+		this.currentCard = currentCard;
+	}
+	
 }

@@ -66,7 +66,12 @@ public class Card
 		return back;
 	}
 	
-	public String getStringback() {
+	/**
+	 * 
+	 * @return All the text on the back of the card.
+	 */
+	public String getStringback()
+	{
 		String result = "";
 		for(String s:back) {
 			result += s + "\n";

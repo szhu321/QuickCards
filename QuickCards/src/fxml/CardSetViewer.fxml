@@ -11,8 +11,9 @@
    <center>
       <VBox alignment="CENTER" minWidth="0.0" prefHeight="400.0" prefWidth="806.0" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox alignment="CENTER_RIGHT" prefHeight="90.0" prefWidth="741.0">
+            <HBox alignment="CENTER" prefHeight="90.0" prefWidth="741.0" spacing="30.0">
                <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#editBtnOnclick" text="Edit" />
                   <Button mnemonicParsing="false" onMouseClicked="#removeBtnOnClick" text="Remove" />
                   <Button mnemonicParsing="false" onMouseClicked="#addCardOnClick" text="Add Card" />
                </children>
