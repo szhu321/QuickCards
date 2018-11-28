@@ -1,8 +1,11 @@
 package main;
 
+import backend.Card;
 import backend.CardManager;
+import backend.SearchEngine;
 import javafx.application.Application;
 import javafx.stage.Stage;
+import saving.FileReader;
 
 public class MainRunner extends Application
 {
@@ -32,10 +35,19 @@ public class MainRunner extends Application
 		sceneChanger = new SceneChanger(window);
 		sceneChanger.switchToMainMenu();
 		
-		
 		//root.getChildren().setAll((BorderPane)FXMLLoader.load(getClass().getResource("/fxml/MainMenu.fxml")));
 		//BorderPane bp = (BorderPane)FXMLLoader.load(getClass().getResource("/fxml/CardSetSelector.fxml"));
 		window.show();
+		
+		SearchEngine search = new SearchEngine(FileReader.getLocalCardSets());
+		SearchEngine.sortCardByName(search.getCards());
+		System.out.println(search);
+		System.out.println("\n\n\n");
+		
+		for(Card crd: search.findCards("14"))
+		{
+			System.out.println(crd.getFront());
+		}
 		
 		//System.out.println(String.format("%s", 2.300010));
 		//String str = "HEllO@# ";
