@@ -1,0 +1,14 @@
+Political Parties@#Political parties are group of canidates that join together to choose candidates for office.
+Party Platform@#A document that lays out a party's core belieds and policy proposals.
+Party Caucuses@#Organized members of congress and state legislatures that continues to vote on the same policies promised by the party's platform.
+National Committes@#Top of the party organization. Members are chosen by each state party organization. Main job of this committee is to ensure that the president nominee gets elected. They run training workshops, such as candidate recruitment and fundraising.
+Cooordinated Expenditures@#Money spent by the nation committee on the presidential campaign.
+Independent Expenditures@#Funds that are spent separately on general efforts to increase voter turnout for the party's nominee.
+State Political Parties@#This party tries to elect candidates to statewide office. Each state party has its own website that provides information about key issues.
+Local party @#This party exists at the county, town, and precinct or ward levels. They help recruit candidates for lower-level elected offices, register voters, and endure that voter get to the polls on Election Day.
+Primary Election@#Election in which voters select the candidates who will run on the party label in the general election; also called direct primary.
+General Election@#Election in which voters choose their elected officials.
+Closed Primary@#Voters must affiliate with a party before casting a vote.
+Semi-closed Primary@#Party-afflicted voters cast votes in their party's primary. Nonaffiliated voters can choose which party's primary to vote in.
+Open Primary@#Voter do not have to affiliate with a party. Voters are given ballots with each party's list of candidates but are restricted to voting for only one party's nominees.
+Blanket Primary@#Voters are given ballots from all parties and allowed to cast votes for any party's candidates as long as they cast only one vote per elective office. This was ruled unconstitutional by the Supreme Court in 2000.

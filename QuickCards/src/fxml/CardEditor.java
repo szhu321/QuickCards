@@ -1,6 +1,8 @@
 package fxml;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import backend.Card;
@@ -32,12 +34,15 @@ public class CardEditor implements Initializable
 	 */
 	public void saveOnclick()
 	{
-		
+		currentCard.setFront(frontSideTxt.getText());
+		List<String> temp = new ArrayList<String>();
+		temp.add(backSideTxt.getText());
+		currentCard.setBack(temp);
+		FileSaver.writeCardSetToFile(MainRunner.getCardManager().getCurrentCardSet());
 	}
 	
 	public void backBtnOnclick()
 	{
-		
 		MainRunner.getSceneSelector().switchToCardSetViewer();
 	}
 }

@@ -69,9 +69,13 @@ public class CardSetViewerController implements Initializable
 		MainRunner.getSceneSelector().switchToCardRemover();
 	}
 	
+	/**
+	 * If there is no cards the edit button wont work.
+	 */
 	public void editBtnOnclick()
 	{
-		//todo: add a edit function.
+		if(cardSet.getCards().size() != 0)
+			MainRunner.getSceneSelector().switchToCardEditor();
 	}
 	
 	public void returnToSelector()
@@ -89,6 +93,7 @@ public class CardSetViewerController implements Initializable
 			String text = "";
 			textBox.setText(text);
 			cardCounterTxt.setText("0 / 0");
+			MainRunner.getCardManager().setCurrentCard(null);
 			return;
 		}
 		Card card = cardSet.getCards().get(currentCardIdx);
