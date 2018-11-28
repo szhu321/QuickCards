@@ -40,15 +40,21 @@ public class CardSet
 
 	public void addCard(Card card)
 	{
+		card.setCardSet(this);
 		cards.add(card);
 	}
 
-	public void removeCards(Card card) {
-		cards.remove(card);
+	public void removeCards(Card card)
+	{
+		boolean isremoved = cards.remove(card);
+		if(isremoved)
+			card.setCardSet(null);
 	}
 	
 	public void setCards(List<Card> cards)
 	{
+		for(Card card: cards)
+			card.setCardSet(this);
 		this.cards = cards;
 	}
 	

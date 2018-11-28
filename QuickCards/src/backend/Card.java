@@ -13,6 +13,7 @@ public class Card
 	private List<String> back;
 	private int timesPlayed;
 	private int timesGottenWrong;
+	private CardSet cardSet;
 	
 	public Card()
 	{
@@ -112,7 +113,19 @@ public class Card
 		return timesGottenWrong;
 	}
 	
-	public String getPercentageWrong() {
+	public String getPercentageWrong(){
 		return "You have gotten this wrong " + (timesGottenWrong*100)/timesPlayed + "% of the time.";
 	}
+
+	public CardSet getCardSet()
+	{
+		return cardSet;
+	}
+
+	public void setCardSet(CardSet cardSet)
+	{
+		this.cardSet = cardSet;
+	}
+	
+	
 }

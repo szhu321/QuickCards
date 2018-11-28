@@ -9,6 +9,11 @@ import backend.Card;
 import backend.CardSet;
 import myutilities.FileUtil;
 
+/**
+ * 
+ * Class used to save the cards to a text file.
+ *
+ */
 public class FileSaver
 {
 	private Formatter formatter;
