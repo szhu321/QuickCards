@@ -27,6 +27,8 @@ public class CardManager
 	 */
 	private Card currentCard;
 	
+	private SearchEngine searchEngine;
+	
 	public CardManager()
 	{
 		allCardSets = new ArrayList<CardSet>();
@@ -35,6 +37,7 @@ public class CardManager
 	public CardManager(List<CardSet> cardsets)
 	{
 		allCardSets = cardsets;
+		searchEngine = new SearchEngine(allCardSets);
 	}
 	
 	//useful methods
@@ -69,4 +72,8 @@ public class CardManager
 		this.currentCard = currentCard;
 	}
 	
+	public SearchEngine getSearchEngine()
+	{
+		return searchEngine;
+	}
 }

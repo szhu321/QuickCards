@@ -40,11 +40,10 @@ public class MainRunner extends Application
 		window.show();
 		
 		SearchEngine search = new SearchEngine(FileReader.getLocalCardSets());
-		SearchEngine.sortCardByName(search.getCards());
 		System.out.println(search);
 		System.out.println("\n\n\n");
 		
-		for(Card crd: search.findCards("14"))
+		for(Card crd: search.findCards(""))
 		{
 			System.out.println(crd.getFront());
 		}

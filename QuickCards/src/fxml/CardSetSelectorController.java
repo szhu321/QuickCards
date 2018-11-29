@@ -9,9 +9,14 @@ import java.util.ResourceBundle;
 import backend.Card;
 import backend.CardManager;
 import backend.CardSet;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import main.MainRunner;
@@ -20,6 +25,7 @@ import saving.FileReader;
 public class CardSetSelectorController implements Initializable
 {
 	public FlowPane cardGrid;
+	public ComboBox<String> searchBox;
 	//testing
 //	private List<CardSet> testCardSets;
 //	private List<CardSet> localCards;
@@ -34,6 +40,24 @@ public class CardSetSelectorController implements Initializable
 		MainRunner.setCardManager(new CardManager(FileReader.getLocalCardSets()));
 		cardSets = MainRunner.getCardManager().getAllCardSets();
 		displayCardSets(cardSets);
+		setUpSearchBox();
+	}
+	
+	private void setUpSearchBox()
+	{
+		searchBox.setVisibleRowCount(6);
+		searchBox.getEditor().setOnKeyReleased(event -> 
+		{
+			String newValue = ((TextField)event.getTarget()).getText();
+			//System.out.println(newValue);
+			List<Card> cards = MainRunner.getCardManager().getSearchEngine().findCards(newValue);
+			searchBox.getItems().clear();
+			//System.out.println(cards);
+			for(int i = 0; i < cards.size(); i++)
+			{
+				searchBox.getItems().add(cards.get(i).getFront());
+			}
+		});
 	}
 	
 	private void displayCardSets(List<CardSet> cardSet)

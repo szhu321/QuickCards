@@ -17,6 +17,7 @@ public class SearchEngine
 				cards.add(crd);
 			}
 		}
+		sortCardByName(cards);
 	}
 	
 	public static void sortCardByName(List<Card> cards)
@@ -45,6 +46,9 @@ public class SearchEngine
 		//this list contains the final result.
 		List<Card> finalCards = new ArrayList<Card>();
 		
+		if(str.length() == 0)
+			return finalCards;
+		
 		for(Card crd: cards)
 		{
 			tempCards.add(crd);
@@ -59,8 +63,19 @@ public class SearchEngine
 			int max = tempCards.size() - 1;
 			while(true)
 			{
+				//if nothing is found break out of both loops.
+				if(max < min)
+				{
+					complete = true;
+					break;
+				}
 				int middle = (int)((max + min) / 2);
-				int compareNum = tempCards.get(middle).getFront().toUpperCase().substring(0, str.length()).compareTo(str.toUpperCase());
+				int size = 0;
+				if(tempCards.get(middle).getFront().length() < str.length())
+					size = tempCards.get(middle).getFront().length();
+				else
+					size = str.length();
+				int compareNum = tempCards.get(middle).getFront().toUpperCase().substring(0, size).compareTo(str.toUpperCase());
 				//if match is found add card to the finalCard list.
 				//then remove card from the tempCard list.
 				if(compareNum == 0)
@@ -69,14 +84,6 @@ public class SearchEngine
 					tempCards.remove(middle);
 					break;
 				}
-				
-				//if nothing is found break out of both loops.
-				if(max < min)
-				{
-					complete = true;
-					break;
-				}
-				
 				if(compareNum < 0)
 					min = middle + 1;
 				else
