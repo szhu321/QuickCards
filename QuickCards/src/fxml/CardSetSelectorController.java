@@ -9,16 +9,20 @@ import java.util.ResourceBundle;
 import backend.Card;
 import backend.CardManager;
 import backend.CardSet;
+import backend.SearchEngine;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.VBox;
 import main.MainRunner;
 import saving.FileReader;
 
@@ -26,6 +30,7 @@ public class CardSetSelectorController implements Initializable
 {
 	public FlowPane cardGrid;
 	public ComboBox<String> searchBox;
+	public VBox vBox;
 	//testing
 //	private List<CardSet> testCardSets;
 //	private List<CardSet> localCards;
@@ -45,19 +50,42 @@ public class CardSetSelectorController implements Initializable
 	
 	private void setUpSearchBox()
 	{
+		vBox.setOnKeyPressed(event -> 
+		{
+			if(event.getCode().equals(KeyCode.ENTER))
+			{
+				String str = searchBox.getEditor().getText();
+				switchSceneToCard(str);
+			}
+		});
 		searchBox.setVisibleRowCount(6);
+		//searchBox.getButtonCell().setStyle("-fx-cursor: pointer");
 		searchBox.getEditor().setOnKeyReleased(event -> 
 		{
+			
 			String newValue = ((TextField)event.getTarget()).getText();
 			//System.out.println(newValue);
 			List<Card> cards = MainRunner.getCardManager().getSearchEngine().findCards(newValue);
 			searchBox.getItems().clear();
+			
 			//System.out.println(cards);
 			for(int i = 0; i < cards.size(); i++)
 			{
 				searchBox.getItems().add(cards.get(i).getFront());
 			}
 		});
+	}
+	
+	private void switchSceneToCard(String str)
+	{
+		List<Card> crds = MainRunner.getCardManager().getSearchEngine().findCards(str);
+		if(crds.size() == 1)
+		{
+			Card card = crds.get(0);
+			MainRunner.getCardManager().setCurrentCardSet(card.getCardSet());
+			MainRunner.getCardManager().setCurrentCard(card);
+			MainRunner.getSceneSelector().switchToCardSetViewer();
+		}
 	}
 	
 	private void displayCardSets(List<CardSet> cardSet)

@@ -39,14 +39,14 @@ public class MainRunner extends Application
 		//BorderPane bp = (BorderPane)FXMLLoader.load(getClass().getResource("/fxml/CardSetSelector.fxml"));
 		window.show();
 		
-		SearchEngine search = new SearchEngine(FileReader.getLocalCardSets());
-		System.out.println(search);
-		System.out.println("\n\n\n");
-		
-		for(Card crd: search.findCards(""))
-		{
-			System.out.println(crd.getFront());
-		}
+//		SearchEngine search = ne	w SearchEngine(FileReader.getLocalCardSets());
+//		System.out.println(search);
+//		System.out.println("\n\n\n");
+//		
+//		for(Card crd: search.findCards(""))
+//		{
+//			System.out.println(crd.getFront());
+//		}
 		
 		//System.out.println(String.format("%s", 2.300010));
 		//String str = "HEllO@# ";

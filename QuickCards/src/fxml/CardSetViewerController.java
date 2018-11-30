@@ -8,6 +8,7 @@ import backend.Card;
 import backend.CardSet;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import main.MainRunner;
@@ -30,6 +31,17 @@ public class CardSetViewerController implements Initializable
 	{
 		cardSet = MainRunner.getCardManager().getCurrentCardSet();
 		currentCardIdx = 0;
+		if(MainRunner.getCardManager().getCurrentCard() != null)
+		{
+			for(int i = 0; i < cardSet.getCards().size(); i++)
+			{
+				if(cardSet.getCards().get(i).equals(MainRunner.getCardManager().getCurrentCard()))
+				{
+					currentCardIdx = i;
+					break;
+				}
+			}
+		}
 		front = true;
 		display();
 	}
