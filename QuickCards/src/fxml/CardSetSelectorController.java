@@ -23,6 +23,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import main.MainRunner;
 import saving.FileReader;
 
@@ -31,6 +32,8 @@ public class CardSetSelectorController implements Initializable
 	public FlowPane cardGrid;
 	public ComboBox<String> searchBox;
 	public VBox vBox;
+	public TextField searchText;
+	public VBox searchOptions;
 	//testing
 //	private List<CardSet> testCardSets;
 //	private List<CardSet> localCards;
@@ -46,6 +49,37 @@ public class CardSetSelectorController implements Initializable
 		cardSets = MainRunner.getCardManager().getAllCardSets();
 		displayCardSets(cardSets);
 		setUpSearchBox();
+		setUpSearchGUI();
+	}
+	
+	private void setUpSearchGUI()
+	{
+		searchText.textProperty().addListener(new ChangeListener<String>()
+		{
+
+			@Override
+			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue)
+			{
+				//System.out.println(newValue);
+				List<Card> cards = MainRunner.getCardManager().getSearchEngine().findCards(newValue);
+				searchOptions.getChildren().clear();
+				for(int i = 0; i < cards.size(); i++)
+				{
+					searchOptions.getChildren().add(getSearchBtn(cards.get(i).getFront()));
+				}
+			}
+	
+		});
+	}
+	
+	private Button getSearchBtn(String str)
+	{
+		Button txtBtn = new Button(str);
+		txtBtn.setOnAction(event -> 
+		{
+			searchText.setText(((Button)event.getTarget()).getText());
+		});
+		return txtBtn;
 	}
 	
 	private void setUpSearchBox()
