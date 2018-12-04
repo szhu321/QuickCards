@@ -30,7 +30,7 @@ import saving.FileReader;
 public class CardSetSelectorController implements Initializable
 {
 	public FlowPane cardGrid;
-	public ComboBox<String> searchBox;
+	//public ComboBox<String> searchBox;
 	public VBox vBox;
 	public TextField searchText;
 	public VBox searchOptions;
@@ -48,12 +48,20 @@ public class CardSetSelectorController implements Initializable
 		MainRunner.setCardManager(new CardManager(FileReader.getLocalCardSets()));
 		cardSets = MainRunner.getCardManager().getAllCardSets();
 		displayCardSets(cardSets);
-		setUpSearchBox();
+		//setUpSearchBox();
 		setUpSearchGUI();
 	}
 	
 	private void setUpSearchGUI()
 	{
+		vBox.setOnKeyPressed(event -> 
+		{
+			if(event.getCode().equals(KeyCode.ENTER))
+			{
+				String str = searchText.getText();
+				switchSceneToCard(str);
+			}
+		});
 		searchText.textProperty().addListener(new ChangeListener<String>()
 		{
 
@@ -65,6 +73,8 @@ public class CardSetSelectorController implements Initializable
 				searchOptions.getChildren().clear();
 				for(int i = 0; i < cards.size(); i++)
 				{
+					if(i == 5)
+						break;
 					searchOptions.getChildren().add(getSearchBtn(cards.get(i).getFront()));
 				}
 			}
@@ -82,33 +92,26 @@ public class CardSetSelectorController implements Initializable
 		return txtBtn;
 	}
 	
-	private void setUpSearchBox()
-	{
-		vBox.setOnKeyPressed(event -> 
-		{
-			if(event.getCode().equals(KeyCode.ENTER))
-			{
-				String str = searchBox.getEditor().getText();
-				switchSceneToCard(str);
-			}
-		});
-		searchBox.setVisibleRowCount(6);
-		//searchBox.getButtonCell().setStyle("-fx-cursor: pointer");
-		searchBox.getEditor().setOnKeyReleased(event -> 
-		{
-			
-			String newValue = ((TextField)event.getTarget()).getText();
-			//System.out.println(newValue);
-			List<Card> cards = MainRunner.getCardManager().getSearchEngine().findCards(newValue);
-			searchBox.getItems().clear();
-			
-			//System.out.println(cards);
-			for(int i = 0; i < cards.size(); i++)
-			{
-				searchBox.getItems().add(cards.get(i).getFront());
-			}
-		});
-	}
+//	private void setUpSearchBox()
+//	{
+//		
+//		searchBox.setVisibleRowCount(6);
+//		//searchBox.getButtonCell().setStyle("-fx-cursor: pointer");
+//		searchBox.getEditor().setOnKeyReleased(event -> 
+//		{
+//			
+//			String newValue = ((TextField)event.getTarget()).getText();
+//			//System.out.println(newValue);
+//			List<Card> cards = MainRunner.getCardManager().getSearchEngine().findCards(newValue);
+//			searchBox.getItems().clear();
+//			
+//			//System.out.println(cards);
+//			for(int i = 0; i < cards.size(); i++)
+//			{
+//				searchBox.getItems().add(cards.get(i).getFront());
+//			}
+//		});
+//	}
 	
 	private void switchSceneToCard(String str)
 	{
