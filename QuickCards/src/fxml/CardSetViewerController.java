@@ -20,6 +20,7 @@ public class CardSetViewerController implements Initializable
 	public Text textBox;
 	public HBox textBoxContainer;
 	public Text cardCounterTxt;
+	public Text cardSetName;
 	
 	private CardSet cardSet;
 	private int currentCardIdx;
@@ -42,6 +43,7 @@ public class CardSetViewerController implements Initializable
 				}
 			}
 		}
+		cardSetName.setText("Card Set: " + cardSet.getName());
 		front = true;
 		display();
 	}

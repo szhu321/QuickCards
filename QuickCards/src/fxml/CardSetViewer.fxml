@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import java.net.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
@@ -17,6 +18,14 @@
                   <Button mnemonicParsing="false" onMouseClicked="#removeBtnOnClick" text="Remove" />
                   <Button mnemonicParsing="false" onMouseClicked="#addCardOnClick" text="Add Card" />
                </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text fx:id="cardSetName" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20pt; -fx-font-weight: bold;" text="Text" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
             </HBox>
             <HBox fx:id="textBoxContainer" alignment="CENTER" onMouseClicked="#flipCard" prefHeight="378.0" prefWidth="719.0" style="-fx-border-radius: 5px;" styleClass="card">
                <children>

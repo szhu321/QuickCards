@@ -18,7 +18,7 @@ public class SceneChanger
 	{
 		this.window = window;
 		root = new Group();
-		scene = new Scene(root, 800, 600);
+		scene = new Scene(root, MainRunner.resolutionX, MainRunner.resolutionY);
 		this.window.setScene(scene);
 	}
 	
