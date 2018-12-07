@@ -43,7 +43,7 @@ public class CardSetViewerController implements Initializable
 				}
 			}
 		}
-		cardSetName.setText("Card Set: " + cardSet.getName());
+		cardSetName.setText("Card Set: " + cardSet.getName() );
 		front = true;
 		display();
 	}
