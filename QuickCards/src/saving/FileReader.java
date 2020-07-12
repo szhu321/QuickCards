@@ -1,7 +1,10 @@
 package saving;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -29,9 +32,10 @@ public class FileReader
 			name = name.substring(0, name.length() - 4);
 			CardSet cardset = new CardSet(name);
 			//System.out.println(name);
+			Scanner sn;
 			try
 			{
-				Scanner sn = new Scanner(file);
+				sn = new Scanner(new InputStreamReader(new FileInputStream(file), "UTF8"));
 				while(sn.hasNextLine())
 				{
 					String str = sn.nextLine();
@@ -50,7 +54,11 @@ public class FileReader
 					}
 					cardset.addCard(tempCard);
 				}
-				
+				sn.close();
+			}
+			catch (UnsupportedEncodingException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
 			}
 			catch (FileNotFoundException e)
 			{

@@ -2,6 +2,10 @@ package saving;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
 import java.util.Formatter;
 import java.util.List;
 
@@ -16,7 +20,8 @@ import myutilities.FileUtil;
  */
 public class FileSaver
 {
-	private Formatter formatter;
+	//private Formatter formatter;
+	private OutputStreamWriter outputStreamWriter;
 	public static final String FRONT_BACK_SEPERATOR = "@#";
 	public static final String BACK_EXPLAN_SEPERATOR = "%$";
 	
@@ -25,7 +30,9 @@ public class FileSaver
 		createCardSetSavesFolder();
 		try
 		{
-			formatter = new Formatter("saves/cardsets/" + name + ".txt");
+			FileOutputStream fo = new FileOutputStream(new File("saves/cardsets/" + name + ".txt"));
+			outputStreamWriter = new OutputStreamWriter(fo, StandardCharsets.UTF_8);
+			//formatter = new Formatter("saves/cardsets/" + name + ".txt");
 			//System.out.println("File Created");
 		}
 		catch (FileNotFoundException e)
@@ -36,12 +43,24 @@ public class FileSaver
 	
 	public void closeFile()
 	{
-		formatter.close();
+		//formatter.close();
+		try {
+			outputStreamWriter.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public void writeToFile(String str)
 	{
-		formatter.format("%s", str);
+		//formatter.format("%s", str);
+		try {
+			outputStreamWriter.write(str);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public void writeCardToFile(Card card)
