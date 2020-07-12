@@ -49,6 +49,7 @@ public class FileReader
 						String[] otherSplit = mainSplit[1].split(FileSaver.BACK_EXPLAN_SEPERATOR);
 					for(String e : otherSplit)
 					{
+						//System.out.print(e);
 						tempCard.addExplanation(e);
 					}
 					}

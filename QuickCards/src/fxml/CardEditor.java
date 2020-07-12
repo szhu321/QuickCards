@@ -1,5 +1,7 @@
 package fxml;
 
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +39,14 @@ public class CardEditor implements Initializable
 		currentCard.setFront(frontSideTxt.getText());
 		List<String> temp = new ArrayList<String>();
 		temp.add(backSideTxt.getText());
+		//backSideTxt.getTe
+//		try {
+//			PrintStream out = new PrintStream(System.out, true, "UTF-8");
+//			out.print("BACK: " + backSideTxt.getText() + "HEllo");
+//		} catch (UnsupportedEncodingException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		currentCard.setBack(temp);
 		FileSaver.writeCardSetToFile(MainRunner.getCardManager().getCurrentCardSet());
 	}

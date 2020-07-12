@@ -56,7 +56,7 @@ public class FileSaver
 	{
 		//formatter.format("%s", str);
 		try {
-			outputStreamWriter.write(str);
+			outputStreamWriter.write(str);;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -68,14 +68,18 @@ public class FileSaver
 		String result = "";
 		result += card.getFront() + FRONT_BACK_SEPERATOR;
 		List<String> explanations = card.getBack();
+		//System.out.println(card.getFront() + " Size: " + explanations.size());
 		for(int i = 0; i < explanations.size(); i++)
 		{
+			//System.out.println("Result: " + result);
 			if(i < explanations.size() - 1)
 				result += explanations.get(i) + BACK_EXPLAN_SEPERATOR;
 			else
 				result += explanations.get(i);
 		}
+		
 		result += "\n";
+		
 		writeToFile(result);
 	}
 	

@@ -74,9 +74,11 @@ public class Card
 	public String getStringback()
 	{
 		String result = "";
-		for(String s:back) {
-			result += s + "\n";
+		for(int i = 0; i < back.size() - 1; i++)
+		{
+			result += back.get(i) + "\n";
 		}
+		result += back.get(back.size() - 1);
 		return result;
 	}
 

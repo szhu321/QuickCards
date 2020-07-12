@@ -31,6 +31,7 @@ public class CardCreaterController implements Initializable
 		if(frontSideTxt.getText().equals(""))
 			return;
 		tempCard.addExplanation(backSideTxt.getText());
+		//System.out.print("BACK ADDING:" + backSideTxt.getText() + "hello");
 		frontSideTxt.setText("");
 		backSideTxt.setText("");
 		CardSet tempCardSet = null;
