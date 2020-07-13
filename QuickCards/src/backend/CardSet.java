@@ -62,6 +62,16 @@ public class CardSet
 		return cards.size();
 	}
 	
+	public void shuffle()
+	{
+		List<Card> shuffledList = new ArrayList<Card>();
+		while(cards.size() > 0)
+		{
+			shuffledList.add(cards.remove((int)(Math.random() * cards.size())));
+		}
+		cards = shuffledList;
+	}
+	
 	public String toString()
 	{
 		String result = "";

@@ -10,7 +10,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="743.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.CardSetViewerController">
    <center>
-      <VBox alignment="CENTER" minWidth="0.0" prefHeight="400.0" prefWidth="806.0" spacing="20.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" minWidth="0.0" prefHeight="500.0" prefWidth="806.0" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER" prefHeight="90.0" prefWidth="741.0" spacing="30.0">
                <children>
@@ -19,6 +19,7 @@
                   <Button mnemonicParsing="false" onMouseClicked="#addCardOnClick" text="Add Card" />
                </children>
             </HBox>
+            
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Text fx:id="cardSetName" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20pt; -fx-font-weight: bold;" text="Text" />
@@ -42,6 +43,11 @@
                   <Button fx:id="previous" mnemonicParsing="false" onMouseClicked="#previous" text="Previous" />
                   <Button fx:id="next" mnemonicParsing="false" onMouseClicked="#next" text="Next" />
                   <Button mnemonicParsing="false" onMouseClicked="#returnToSelector" text="Exit" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="90.0" prefWidth="741.0" spacing="30.0">
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#shuffleBtnOnclick" text="Shuffle" />
                </children>
             </HBox>
          </children>

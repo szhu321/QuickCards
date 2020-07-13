@@ -73,6 +73,8 @@ public class CardSetViewerController implements Initializable
 		display();
 	}
 	
+	
+	
 	public void addCardOnClick()
 	{
 		MainRunner.getSceneSelector().switchToCardCreater();
@@ -90,6 +92,12 @@ public class CardSetViewerController implements Initializable
 	{
 		if(cardSet.getCards().size() != 0)
 			MainRunner.getSceneSelector().switchToCardEditor();
+	}
+	
+	public void shuffleBtnOnclick()
+	{
+		cardSet.shuffle();
+		display();
 	}
 	
 	public void returnToSelector()
