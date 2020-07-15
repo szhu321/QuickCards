@@ -1,0 +1,6 @@
+Scientific Polling@#Randomness of the sample decreases bias.
+Polling@#When people were asked their opinion on topics
+Gallup@#predicted the election correctly using random sampling.
+Exit Polling@#Trying to get information from voters right after they voted. Valuable in studying the aftermath of a election.
+Internet Polling@#Questions that appear on the internet asking for people's opinion about the election.
+Nature and Nurture@#Nature: Twin/adoption studies. Nurture: Socialization

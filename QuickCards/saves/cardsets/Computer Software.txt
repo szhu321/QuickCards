@@ -1,0 +1,4 @@
+Operating system@#Software that controls a computers basic functions
+Microsoft Word@#A nice homework typing station.
+Candy Crush@#A game about linking candies.
+BIOS@#Basic Input Output System

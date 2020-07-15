@@ -3,67 +3,131 @@ package backend;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Sheng
+ * A single card contains a front and a Explanation.
+ */
 public class Card
 {
-	private String name;
-	private List<String> descriptions;
+	private String front; //change to something more inclusive of all entries
+	private List<String> back;
+	private int timesPlayed;
+	private int timesGottenWrong;
+	private CardSet cardSet;
 	
 	public Card()
 	{
 		this("N/A");
 	}
 	
-	public Card(String name)
+	public Card(String front)
 	{
-		this(name, null);
+		this.front = front;
+		back = new ArrayList<String>();
 	}
 	
-	public Card(String name, List<String> descriptions)
+	public Card(String front, String explanation)
 	{
-		this.name = name;
-		if(descriptions == null)
-			this.descriptions = new ArrayList<String>();
+		this.front = front;
+		back = new ArrayList<String>();
+		back.add(explanation);
+	}
+	
+	public Card(String front, List<String> back)
+	{
+		this.front = front;
+		if(back == null)
+			this.back = new ArrayList<String>();
 		else
-			this.descriptions = descriptions;
+			this.back = back;
 	}
 	
 	public String toString()
 	{
 		String info = "";
-		for(String desc: descriptions)
+		for(String desc: back)
 			info += desc + "\n";
 		if(info.equals(""))
-			info = "No Description";
-		return name + "\n" + info;
+			info = "No Explanation";
+		return front + "\n" + info;
 	}
 
-	public String getName()
+	public String getFront()
 	{
-		return name;
+		return front;
 	}
 
-	public void setName(String name)
+	public void setFront(String front)
 	{
-		this.name = name;
+		this.front = front;
 	}
 
-	public List<String> getDescriptions()
+	public List<String> getBack()
 	{
-		return descriptions;
-	}
-
-	public void setDescriptions(List<String> descriptions)
-	{
-		this.descriptions = descriptions;
+		return back;
 	}
 	
-	public void addDescription(String str)
+	/**
+	 * 
+	 * @return All the text on the back of the card.
+	 */
+	public String getStringback()
 	{
-		descriptions.add(str);
+		String result = "";
+		for(int i = 0; i < back.size() - 1; i++)
+		{
+			result += back.get(i) + "\n";
+		}
+		result += back.get(back.size() - 1);
+		return result;
+	}
+
+	public void setBack(List<String> back)
+	{
+		this.back = back;
 	}
 	
-	public void removeDescription(int idx)
+	public void addExplanation(String str)
 	{
-		descriptions.remove(idx);
+		back.add(str);
 	}
+	
+	public void removeExplanation(int idx)
+	{
+		back.remove(idx);
+	}
+	
+	public void incrementTimesPlayed()
+	{ 
+		timesPlayed++;
+	}
+	
+	public void incrementTimesGottenWrong()
+	{
+		timesGottenWrong++;
+	}
+	
+	public int getTimesPlayed() {
+		return timesPlayed;
+	}
+	
+	public int getTimesGottenWrong() {
+		return timesGottenWrong;
+	}
+	
+	public String getPercentageWrong(){
+		return "You have gotten this wrong " + (timesGottenWrong*100)/timesPlayed + "% of the time.";
+	}
+
+	public CardSet getCardSet()
+	{
+		return cardSet;
+	}
+
+	public void setCardSet(CardSet cardSet)
+	{
+		this.cardSet = cardSet;
+	}
+	
+	
 }

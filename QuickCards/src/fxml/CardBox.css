@@ -1,0 +1,9 @@
+.card
+{
+	-fx-border-color: blue;
+	-fx-border-radius: 10px;
+	-fx-border-style: solid;
+	-fx-border-width: 5px;
+	-fx-cursor: hand;
+	-fx-font-size: 24pt;
+}
