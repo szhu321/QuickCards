@@ -8,15 +8,16 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="743.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.CardSetViewerController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="919.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.CardSetViewerController">
    <center>
-      <VBox alignment="CENTER" minWidth="0.0" prefHeight="500.0" prefWidth="806.0" spacing="20.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" minWidth="0.0" prefHeight="585.0" prefWidth="966.0" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER" prefHeight="90.0" prefWidth="741.0" spacing="30.0">
                <children>
                   <Button mnemonicParsing="false" onMouseClicked="#editBtnOnclick" text="Edit" />
                   <Button mnemonicParsing="false" onMouseClicked="#removeBtnOnClick" text="Remove" />
                   <Button mnemonicParsing="false" onMouseClicked="#addCardOnClick" text="Add Card" />
+                  <Button mnemonicParsing="false" onMouseClicked="#shuffleBtnOnclick" text="Shuffle" />
                </children>
             </HBox>
             
@@ -45,11 +46,7 @@
                   <Button mnemonicParsing="false" onMouseClicked="#returnToSelector" text="Exit" />
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="90.0" prefWidth="741.0" spacing="30.0">
-               <children>
-                  <Button mnemonicParsing="false" onMouseClicked="#shuffleBtnOnclick" text="Shuffle" />
-               </children>
-            </HBox>
+            <HBox alignment="CENTER" prefHeight="90.0" prefWidth="741.0" spacing="30.0" />
          </children>
          <stylesheets>
             <URL value="@UserFriendly.css" />

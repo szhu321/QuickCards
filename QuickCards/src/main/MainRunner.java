@@ -19,8 +19,8 @@ public class MainRunner extends Application
 	
 	//RealDeal
 	private static CardManager cardManager;
-	public static final int resolutionX = 800;
-	public static final int resolutionY = 700;
+	public static final int resolutionX = 920;
+	public static final int resolutionY = 600;
 	
 	//Launches the program. Launch calls the start method.
 	public static void main(String[] args)

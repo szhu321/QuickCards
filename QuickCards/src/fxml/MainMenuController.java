@@ -14,8 +14,8 @@ public class MainMenuController implements Initializable
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1)
 	{
-		container.setPrefHeight(MainRunner.resolutionX);
-		container.setPrefWidth(MainRunner.resolutionY);
+		//container.setPrefHeight(MainRunner.resolutionX);
+		//container.setPrefWidth(MainRunner.resolutionY);
 		
 	}
 	public void loginOnClick()

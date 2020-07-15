@@ -9,7 +9,7 @@
 
 <BorderPane fx:id="container" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@UserFriendly.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.MainMenuController">
    <center>
-      <VBox alignment="CENTER" prefHeight="${container.height}" prefWidth="${container.width}" spacing="30.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="395.0" prefWidth="595.0" spacing="30.0" BorderPane.alignment="CENTER">
          <children>
             <Button mnemonicParsing="false" onMouseClicked="#loginOnClick" text="Login" />
             <Button mnemonicParsing="false" onMouseClicked="#localCardsOnClick" text="Local Cards" />
