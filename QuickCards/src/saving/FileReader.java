@@ -23,9 +23,9 @@ public class FileReader
 	{
 		File[] files = FileUtil.getAllTxtFilesFromDir("saves/cardsets");
 		//System.out.println("Pass 0");
-		if(files == null)
-			return null;
 		List<CardSet> cardSets = new ArrayList<CardSet>();
+		if(files == null)
+			return cardSets;
 		for(File file : files)
 		{
 			String name = file.getName();

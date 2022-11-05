@@ -1,5 +1,7 @@
 package main;
 
+import java.io.File;
+
 import backend.Card;
 import backend.CardManager;
 import backend.SearchEngine;
@@ -41,7 +43,9 @@ public class MainRunner extends Application
 		//BorderPane bp = (BorderPane)FXMLLoader.load(getClass().getResource("/fxml/CardSetSelector.fxml"));
 		window.show();
 		
-//		SearchEngine search = ne	w SearchEngine(FileReader.getLocalCardSets());
+		//System.out.println("Path: " + new File("../").getAbsolutePath());
+
+		//SearchEngine search = new SearchEngine(FileReader.getLocalCardSets());
 //		System.out.println(search);
 //		System.out.println("\n\n\n");
 //		

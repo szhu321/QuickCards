@@ -11,8 +11,8 @@
    <center>
       <VBox alignment="CENTER" prefHeight="395.0" prefWidth="595.0" spacing="30.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" onMouseClicked="#loginOnClick" text="Login" />
-            <Button mnemonicParsing="false" onMouseClicked="#localCardsOnClick" text="Local Cards" />
+            <Button mnemonicParsing="false" onMouseClicked="#loginOnClick" text="Login"/>
+            <Button mnemonicParsing="false" onMouseClicked="#localCardsOnClick" text="Local Cards"/>
             <Button mnemonicParsing="false" onMouseClicked="#quitOnClick" text="Quit" />
          </children>
       </VBox>

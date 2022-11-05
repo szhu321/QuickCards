@@ -10,11 +10,16 @@ public class SearchEngine
 	public SearchEngine(List<CardSet> allCardSets)
 	{
 		cards = new ArrayList<Card>();
-		for(CardSet cs: allCardSets)
+		if(allCardSets == null)
+			System.out.println("ERROR: cardset is null in searchengine constructor");
+		else
 		{
-			for(Card crd: cs.getCards())
+			for(CardSet cs: allCardSets)
 			{
-				cards.add(crd);
+				for(Card crd: cs.getCards())
+				{
+					cards.add(crd);
+				}
 			}
 		}
 		sortCardByName(cards);
